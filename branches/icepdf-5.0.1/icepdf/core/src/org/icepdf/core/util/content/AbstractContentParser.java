@@ -771,7 +771,7 @@ public abstract class AbstractContentParser implements ContentParser {
         if (graphicState.getTextState().font == null ||
                 graphicState.getTextState().font.getFont() == null) {
             // turn on the old awt font engine, as we have a null font
-            FontFactory fontFactory = FontFactory.getInstance();
+//            FontFactory fontFactory = FontFactory.getInstance();
 //            boolean awtState = fontFactory.isAwtFontSubstitution();
 //            fontFactory.setAwtFontSubstitution(true);
             try {
@@ -1413,12 +1413,12 @@ public abstract class AbstractContentParser implements ContentParser {
                     glyphOutlineClip,
                     graphicState, oCGs);
             graphicState.set(tmp);
-            graphicState.translate(textMetrics.getAdvance().x, 0);
-            float shift = textMetrics.getShift();
-            shift += textMetrics.getAdvance().x;
-            textMetrics.setShift(shift);
-            textMetrics.setPreviousAdvance(0);
-            textMetrics.getAdvance().setLocation(0, 0);
+//            graphicState.translate(textMetrics.getAdvance().x, 0);
+//            float shift = textMetrics.getShift();
+//            shift += textMetrics.getAdvance().x;
+//            textMetrics.setShift(shift);
+//            textMetrics.setPreviousAdvance(0);
+//            textMetrics.getAdvance().setLocation(0, 0);
         }
     }
 
