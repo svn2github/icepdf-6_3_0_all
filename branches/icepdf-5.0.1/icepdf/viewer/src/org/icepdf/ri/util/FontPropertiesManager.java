@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 
 /**
  * <p>This class provides a very basic Font Properties Management system.  When this
- * class is initiated, the properites file "pdfviewerfontcache.properties" is
+ * class is initiated, the properties file "pdfviewerfontcache.properties" is
  * read from the default application file path.  If the file cannot be found then
  * all system fonts are read from the operating system and are written to the
  * "pdfviewerfontcache.properties" file.</p>
@@ -35,7 +35,7 @@ import java.util.logging.Logger;
  * by reading already parsed font information from the properties file.  If new
  * fonts are added to the system, the "pdfviewerfontcache.properties" file can
  * be deleted to trigger this class to re-read the System fonts and re-create
- * a new "pdfviewerfontcache.properties" properites file.
+ * a new "pdfviewerfontcache.properties" properties file.
  *
  * @since 2.0
  */
@@ -101,16 +101,14 @@ public class FontPropertiesManager {
 
         setupLock();
         // create the properties file and scan for font sif the
-        if (ownLock()) {
-            propertyFile = new File(dataDir, USER_FILENAME);
-            if (!propertyFile.exists()) {
-                // scan the system for know font locations.
-                readDefaulFontPaths(null);
-                // save the file
-                saveProperties();
-            } else {
-                loadProperties();
-            }
+        propertyFile = new File(dataDir, USER_FILENAME);
+        if (!propertyFile.exists()) {
+            // scan the system for know font locations.
+            readDefaulFontPaths(null);
+            // save the file
+            saveProperties();
+        } else {
+            loadProperties();
         }
 
     }
