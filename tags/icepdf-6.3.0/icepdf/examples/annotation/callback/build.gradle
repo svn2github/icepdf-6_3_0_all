@@ -1,7 +1,0 @@
-apply plugin: 'java'
-
-description 'annotation callback example'
-
-dependencies {
-    compile project(':viewer:viewer-awt')
-}
